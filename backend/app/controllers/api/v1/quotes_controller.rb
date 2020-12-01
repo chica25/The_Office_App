@@ -1,11 +1,11 @@
-class QuotesController < ApplicationController
+class Api::V1::QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :update, :destroy]
 
   # GET /quotes
   def index
     @quotes = Quote.all
 
-    render json: @quotes
+    render json: @quotes, include: :character
   end
 
   # GET /quotes/1
