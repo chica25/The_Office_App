@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_010116) do
+ActiveRecord::Schema.define(version: 2020_11_27_005630) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -22,12 +22,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_010116) do
   create_table "quotes", force: :cascade do |t|
     t.string "quote"
     t.integer "character_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "scores", force: :cascade do |t|
-    t.integer "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
