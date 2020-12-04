@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_005630) do
+ActiveRecord::Schema.define(version: 2020_12_04_024859) do
 
-  create_table "characters", force: :cascade do |t|
+  create_table "api_v1_characters", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes"
   end
 
-  create_table "quotes", force: :cascade do |t|
+  create_table "api_v1_quotes", force: :cascade do |t|
     t.string "quote"
     t.integer "character_id"
     t.datetime "created_at", precision: 6, null: false
