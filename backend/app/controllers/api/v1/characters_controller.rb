@@ -3,9 +3,10 @@ class Api::V1::CharactersController < ApplicationController
 
   # GET /characters
   def index
-    @characters = Character.all
+    @characters = Api::V1::Character.all
 
-    render json: @characters
+    #  render json: @characters
+     render json: @characters, except: [:created_at, :updated_at]
   end
 
   # GET /characters/1
