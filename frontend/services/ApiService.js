@@ -6,7 +6,8 @@ class ApiService {
     }
     fetchImages = () => {
         const url = new URL(this.baseUrl + "/characters") 
-        fetch(url).then(res => res.json()).then(data => (Character.renderImages(data)))
+        fetch(url).then(res => res.json()).then(data => Character.renderImages(data))
+        
     
     }
 }

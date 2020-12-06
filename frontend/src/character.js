@@ -1,9 +1,15 @@
 class Character {
     constructor() {
-        this.renderImages()
+        this.getImages()
         // this.attachEventListener()
     }
-    renderImages() {
+    getImages() {
         api.fetchImages()
+    }
+    static renderImages(data) {
+        data.forEach(character => render(character))
+    }
+    render(character){
+        
     }
 }
