@@ -5,7 +5,10 @@
 // fetch(`${BACKEND_URL}/test`)
 //   .then(response => response.json())
 //   .then(parsedResponse => console.log(parsedResponse));
+const api = new ApiService("http://localhost:3000/api/v1")
 
 document.addEventListener("DOMContentLoaded", () => {
-    debugger;
+    // debugger;
+    new Character(); 
+
 })
