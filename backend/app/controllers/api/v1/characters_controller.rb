@@ -10,20 +10,20 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   # GET /characters/1
-  def show
-    render json: @character
-  end
+  # def show
+  #   render json: @character
+  # end
 
   # POST /characters
-  def create
-    @character = Character.new(character_params)
+  # def create
+  #   @character = Character.new(character_params)
 
-    if @character.save
-      render json: @character, status: :created, location: @character
-    else
-      render json: @character.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @character.save
+  #     render json: @character, status: :created, location: @character
+  #   else
+  #     render json: @character.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /characters/1
   def update
@@ -35,9 +35,9 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   # DELETE /characters/1
-  def destroy
-    @character.destroy
-  end
+  # def destroy
+  #   @character.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
