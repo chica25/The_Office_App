@@ -11,4 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // debugger;
     new Character(); 
 
+
 })
+
+   
