@@ -3,9 +3,10 @@ class Character {
     constructor(character) {
         this.character = character
         this.render()
+        this.attachClickListener()
     }
    
-    static renderImages(data) {
+    static createCharacters(data) {
         data.forEach(character => new Character(character))
     }
     render(){
@@ -15,14 +16,28 @@ class Character {
         this.card.innerHTML = `
         ${this.character.name}
         <img src="${this.character.image_url}">
-        <button class="button">Like Me!</button>
+        <button class="like-button">Like Me!</button>
+        <button class="quote-button">Quotes!</button>
         `
-        
-        // Here is where you want to code the button event listener 
-        // Hint: you have to code it with card passed in.
-        this.constructor.container.append(card)
+        // Add event listener
+        // Hint: Code it with card passed in
+         this.constructor.container.append(card)
 
+        // const likeButton = card.getElementById('likes-btn')
     }
+
+    attachClickListener(){
+        this.card.addEventListener("click", () => {
+            if(event.target.className === 'quote-button'){
+               
+                console.log(this.character.id)
+                api.fetchQuotes(this.character.id).then(quotes => console.log(quotes))
+                //use the character id to make a fetch request for their quotes
+            }
+        })
+    }
+
+
    
 
 }
