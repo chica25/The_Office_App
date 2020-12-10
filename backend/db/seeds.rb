@@ -12,7 +12,7 @@ Api::V1::Character.create(name: "Stanley Hudson", image_url: "https://wsbt.com/r
 Api::V1::Character.create(name: "Andy Bernard", image_url: "https://images1.fanpop.com/images/image_uploads/Andy-in-the-Chair-Model-andy-bernard-1142566_1212_682.jpg")
 Api::V1::Character.create(name: "Kelly Kapoor", image_url: "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/entertainment/Screen-Shot-2019-12-17-at-124022-PM-5182f6de576537d9a9a68f3a6b80ead9.jpg")
 Api::V1::Character.create(name: "Dwight Schrute", image_url: "https://cdn.wallpapername.com/3000x2000/20121025/the%20office%20dwight%20schrute%20rainn%20wilson%203000x2000%20wallpaper_www.wallpapername.com_58.jpg")
-Api::V1::Character.create(name: "Darryl Philbin", image_url: "https://lh3.googleusercontent.com/proxy/EXfXHEHf-Tfkyp5OUmfczlAQFAw3QU7MfvMeWS7_a5KSTRG3c-pBxYuIpZn4xqtDFKa4v7Yi9H1qx8hJ3vl1pzCbIpsw26UwuxvdiyUW9SOeuzMXaDI9iK5f8KUSYY6J5mQbUP4SHazJPlbiH8Wpltul0UQR")
+Api::V1::Character.create(name: "Darryl Philbin", image_url: "https://cdn.costumewall.com/wp-content/uploads/2017/04/darryl-philbin.jpg")
 Api::V1::Character.create(name: "Meredith Palmer", image_url: "https://i.insider.com/5c816739eb3ce87800380e94?width=750&format=jpeg&auto=webp")
 Api::V1::Character.create(name: "Oscar Martinez", image_url: "https://d18ufwot1963hr.cloudfront.net/wp-content/uploads/2019/01/08160443/%40beeslyxhalpert.png")
 Api::V1::Character.create(name: "Angela Martin", image_url: "https://www.thewrap.com/wp-content/uploads/2017/12/Angela-Kinsey-The-Office.jpg")
