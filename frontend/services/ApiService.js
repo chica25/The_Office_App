@@ -8,19 +8,18 @@ class ApiService {
         const url = new URL(this.baseUrl + "/characters") 
         fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
         
-        }
-    fetchQuotes = (id) => fetch(`${this.baseUrl}/characters/${id}/quotes`).then(res => res.json());
     }
-// next step is to Iterate
-
-
-    // Character Patch - update likes
+    fetchQuotes = (id) => fetch(`${this.baseUrl}/characters/${id}/quotes`).then(res => res.json());
+    
+    // next step is to Iterate
+  
+}
+  
+    // Character - update likes
 
     //updateCharacterLikes = () => fetch(`${this.baseURL}/characters`).then
 
-    // list of quotes
    
-    // /characters/:character_id/quotes
 // update character likes
 // udpateLikes = ()
 
