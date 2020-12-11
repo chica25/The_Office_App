@@ -30,8 +30,8 @@ class Character {
     }
 
     attachClickListener(){
-        this.card.addEventListener("click", (e) => {
-            if(e.target.className === 'quote-button'){
+        this.card.addEventListener("click", (event) => {
+            if(event.target.className === 'quote-button'){
                
                 console.log(this.character.id)
                 api.fetchQuotes(this.character.id).then(quotes => console.log(quotes))
