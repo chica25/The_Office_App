@@ -11,6 +11,8 @@ class ApiService {
         }
     fetchQuotes = (id) => fetch(`${this.baseUrl}/characters/${id}/quotes`).then(res => res.json());
     }
+// next step is to Iterate
+
 
     // Character Patch - update likes
 

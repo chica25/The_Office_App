@@ -1,7 +1,9 @@
 class Character {
     static container = document.querySelector('.character-col')
     constructor(character) {
-        this.character = character
+        this.name = name
+        this.image_url = image_url
+        this.likes = likes
         this.render()
         this.attachClickListener()
     }
@@ -14,10 +16,11 @@ class Character {
         card.className = "card"
         this.card = card
         this.card.innerHTML = `
-        ${this.character.name}
+        <h3>${this.character.name}</h3>
         <img src="${this.character.image_url}">
-        <button class="like-button">Like Me!</button>
-        <button class="quote-button">Quotes!</button>
+        <p>${this.character.likes}</p>
+        <button class="like-button">Likes</button>
+        <button class="quote-button">Quotes</button>
         `
         // Add event listener
         // Hint: Code it with card passed in
@@ -27,8 +30,8 @@ class Character {
     }
 
     attachClickListener(){
-        this.card.addEventListener("click", () => {
-            if(event.target.className === 'quote-button'){
+        this.card.addEventListener("click", (e) => {
+            if(e.target.className === 'quote-button'){
                
                 console.log(this.character.id)
                 api.fetchQuotes(this.character.id).then(quotes => console.log(quotes))
