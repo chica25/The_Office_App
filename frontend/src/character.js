@@ -1,9 +1,9 @@
 class Character {
     static container = document.querySelector('.character-col')
     constructor(character) {
-        this.name = name
-        this.image_url = image_url
-        this.likes = likes
+        this.name = character.name
+        this.image_url = character.image_url
+        this.likes = character.likes
         this.render()
         this.attachClickListener()
     }
@@ -16,9 +16,9 @@ class Character {
         card.className = "card"
         this.card = card
         this.card.innerHTML = `
-        <h3>${this.character.name}</h3>
-        <img src="${this.character.image_url}">
-        <p>${this.character.likes}</p>
+        <h3>${this.name}</h3>
+        <img src="${this.image_url}">
+        <p>${this.likes}</p>
         <button class="like-button">Likes</button>
         <button class="quote-button">Quotes</button>
         `

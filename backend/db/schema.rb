@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_024859) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "likes"
+    t.integer "likes", default: 0
   end
 
   create_table "api_v1_quotes", force: :cascade do |t|
