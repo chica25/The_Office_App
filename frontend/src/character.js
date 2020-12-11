@@ -13,11 +13,13 @@ class Character {
     }
     render(){
         const card = document.createElement("div")
+        // refactor this.name, this.image_url, this.likes
+        // const {name, image_url, likes} = this.character;
         card.className = "card"
         this.card = card
         this.card.innerHTML = `
         <h3>${this.name}</h3>
-        <img src="${this.image_url}">
+        <img src="${this.image_url}" />
         <p>${this.likes}</p>
         <button class="like-button">Likes</button>
         <button class="quote-button">Quotes</button>
