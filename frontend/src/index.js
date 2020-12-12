@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // debugger;
     api.fetchImages();
 
+    //check line below
+    // api.fetchQoutes();
+
+    // api.updateCharacterLikes();
+
 
 }) 
 

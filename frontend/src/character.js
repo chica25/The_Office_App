@@ -21,8 +21,8 @@ class Character {
         <h3>${this.name}</h3>
         <img src="${this.image_url}" />
         <p>${this.likes}</p>
-        <button class="like-button">Likes</button>
-        <button class="quote-button">Quotes</button>
+        <button class="likes-btn">Likes</button>
+        <button class="quotes-btn">Quotes</button>
         `
         this.constructor.container.append(card);
     }
@@ -30,12 +30,12 @@ class Character {
         // const likeButton = card.getElementById('likes-btn')
  
 
-    attachClickListener(){
+    attachClickListener = () => {
        this.card.addEventListener("click", () => {
             // console.log(this);
-            const id = this.card.dataset.id
-            if(event.target.className === 'like-btn'){
-                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
+            let id = this.card.dataset.id
+           if (event.target.className === 'likes-btn'){
+                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character));
                 // console.log(this.character.id)
             //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
                 //use the character id to make a fetch request for their quotes
@@ -44,7 +44,10 @@ class Character {
 
         // updateCharacterLikesHTMl = (num) => {
         //     this.card.innerHTML = `${num} Likes`;
-        // };
+          updateCharacterLikesHTML = (character) => {
+              this.character = character
+              this.card.innerHTML = this.render()
+        };
     }
 
 }
