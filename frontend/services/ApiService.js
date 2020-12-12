@@ -11,15 +11,17 @@ class ApiService {
     }
     fetchQuotes = (id) => fetch(`${this.baseUrl}/characters/${id}/quotes`).then(res => res.json());
     
-    // next step is to Iterate
+// next step is to Iterate
   
-}
   
     // Character - update likes
 
-    //updateCharacterLikes = () => fetch(`${this.baseURL}/characters`).then
-
-   
+    updateCharacterLikes = (id) => {
+        fetch(`${this.baseUrl}/characters/${id}`, { method: "PATCH" }).then((res) => {
+            res.json()
+        });
+    }
+}
 // update character likes
 // udpateLikes = ()
 

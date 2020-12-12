@@ -32,12 +32,12 @@ class Character {
     }
 
     attachClickListener(){
-        this.card.addEventListener("click", (event) => {
+        this.card.addEventListener("click", () => {
             console.log(this);
-            if(event.target.className === 'like-button'){
-               
+            if(event.target.className === 'like-btn'){
+                api.updateCharacterLikes(id).then(character => console.log(character))
                 // console.log(this.character.id)
-                api.fetchQuotes(this.character.id).then(quotes => console.log(quotes))
+            //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
                 //use the character id to make a fetch request for their quotes
             }
         })
