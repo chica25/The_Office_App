@@ -10,7 +10,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
 
-  # PATCH/PUT /characters/1
+  # PATCH - /characters/:id/quotes
   def update
     @character = Api::V1::Toy.find_by_id(params[:id])
     @character.update(likes: @character.likes + 1)
@@ -20,8 +20,7 @@ class Api::V1::CharactersController < ApplicationController
 
  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_character
+      def set_character
       @character = Character.find(params[:id])
     end
 end

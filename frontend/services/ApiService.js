@@ -17,9 +17,7 @@ class ApiService {
     // Character - update likes
 
     updateCharacterLikes = (id) => {
-        fetch(`${this.baseUrl}/characters/${id}`, { method: "PATCH" }).then((res) => {
-            res.json()
-        });
+        fetch(`${this.baseUrl}/characters/${id}`, { method: "PATCH" }).then(res => res.json());
     }
 }
 // update character likes

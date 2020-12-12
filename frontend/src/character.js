@@ -24,23 +24,27 @@ class Character {
         <button class="like-button">Likes</button>
         <button class="quote-button">Quotes</button>
         `
-        // Add event listener
-        // Code it with card passed in
-         this.constructor.container.append(card);
-
-        // const likeButton = card.getElementById('likes-btn')
+        this.constructor.container.append(card);
     }
+        
+        // const likeButton = card.getElementById('likes-btn')
+ 
 
     attachClickListener(){
        this.card.addEventListener("click", () => {
             // console.log(this);
+            const id = this.card.dataset.id
             if(event.target.className === 'like-btn'){
-                pi.updateCharacterLikes(character.id).then((character) => this.updateCharacterLikesHTML(character.likes));
+                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
                 // console.log(this.character.id)
             //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
                 //use the character id to make a fetch request for their quotes
             }
-        })
+        });
+
+        // updateCharacterLikesHTMl = (num) => {
+        //     this.card.innerHTML = `${num} Likes`;
+        // };
     }
 
 }
