@@ -1,5 +1,5 @@
 class Character {
-    static container = document.querySelector('.character-col')
+    static container = document.querySelector(".character-col")
     constructor(character) {
         this.name = character.name;
         this.image_url = character.image_url;
@@ -31,11 +31,13 @@ class Character {
  
 
     attachClickListener = () => {
-       this.card.addEventListener("click", () => {
+       this.card.addEventListener("click", (event) => {
             // console.log(this);
             let id = this.card.dataset.id
-           if (event.target.className === 'likes-btn'){
-                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character));
+           if (event.target.className === "likes-btn"){
+                api.updateCharacterLikes(id).then((character) => {
+                    this.updateCharacterLikesHTML(character);
+                });
                 // console.log(this.character.id)
             //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
                 //use the character id to make a fetch request for their quotes

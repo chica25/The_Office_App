@@ -1,5 +1,4 @@
 class Api::V1::CharactersController < ApplicationController
-  before_action :set_character, only: [:update]
 
   # GET /characters
   def index
@@ -12,15 +11,11 @@ class Api::V1::CharactersController < ApplicationController
 
   # PATCH - /characters/:id/quotes
   def update
+    set_character
     @character = Api::V1::Toy.find_by_id(params[:id])
     @character.update(likes: @character.likes + 1)
     render json: @character, except: [:created_at, :updated_at]
   
   end
 
- 
-  private
-      def set_character
-      @character = Character.find(params[:id])
-    end
 end
