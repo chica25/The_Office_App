@@ -4,6 +4,7 @@ class Character {
         this.name = character.name;
         this.image_url = character.image_url;
         this.likes = character.likes;
+        this.id = character.id;
         this.render();
         this.attachClickListener();
     }
@@ -33,7 +34,7 @@ class Character {
     attachClickListener = () => {
        this.card.addEventListener("click", (event) => {
             // console.log(this);
-            let id = this.card.dataset.id
+            let id = this.id
            if (event.target.className === "likes-btn"){
                 api.updateCharacterLikes(id).then((character) => {
                     this.updateCharacterLikesHTML(character);
@@ -44,13 +45,7 @@ class Character {
             }
         });
 
-        // updateCharacterLikesHTMl = (num) => {
-        //     this.card.innerHTML = `${num} Likes`;
-          updateCharacterLikesHTML = (character) => {
-              this.character = character
-              this.card.innerHTML = this.render()
+  
         };
     }
-
-}
-
+ 
