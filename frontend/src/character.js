@@ -7,6 +7,7 @@ class Character {
         this.id = character.id;
         this.render();
         this.attachClickListener();
+        this.getQuoteListener();
     }
    
     static createCharacters(data) {
@@ -23,7 +24,7 @@ class Character {
         <img src="${this.image_url}" />
         <p>${this.likes}</p>
         <button class="likes-btn">Likes</button>
-        <button class="quotes-btn">Quotes</button>
+        <button class="quotes-bttn">Quotes</button>
         `
         this.constructor.container.append(card);
     }
@@ -40,24 +41,26 @@ class Character {
                 // api.updateCharacterLikes(id).then((character) 
                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes)); 
                     //  this.updateCharacterLikesHTML(character);
-                }
+                // } else if (event.target.className === "quotes-bttn") {
+                    // Quote.getQuotes(id)
+               
+           }
+                
+        });
 
-           if (event.target.className === "quotes-btn")
-               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes)); 
+        }
+        getQuoteListener = () => {
+            this.card.addEventListener("click", (event) => {
+            let id = this.id   
+             if (event.target.className === "quotes-bttn") {
+                Quote.getQuotes(id)
+            }
 
-                // console.log(this.character.id)
-            //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
-                //use the character id to make a fetch request for their quotes
-            })
-        
-            // updateCharacterLikesHTML = (like) => {
-       
-    
-
-        };
+        });
 
     }
 
+}
 // practice
 // // items class
 // class Item {
@@ -82,4 +85,3 @@ class Character {
 
 //         })
 //     }
-// }

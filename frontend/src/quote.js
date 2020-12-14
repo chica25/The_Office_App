@@ -3,7 +3,25 @@ class Quote {
         constructor(quote) {
         this.quote = quote
         this.character_id = character_id
-        // this.render()
+        this.render()
+    }
+
+    static getQuotes(id) {
+        api.fetchQuotes(id).then((data) =>
+            data.forEach((quote) => new Quote(quotes))
+        );
+    }
+
+    render() {
+        const quoteList = document.createElement("div")
+        // refactor this.name, this.image_url, this.likes
+        // const {name, image_url, likes} = this.character;
+        quoteList.className = "quoteList"
+        this.quoteList = quoteList;
+        this.quoteList.innerHTML = `
+        <h3>${this.quote}</h3>
+        `
+        this.constructor.container.append(quoteList);
     }
 
 }
@@ -15,7 +33,3 @@ class Quote {
 //     const notesContainer = document.getElementBeId('notes-cotainer')
 //     notesContainer.innerHTML = `
        
-
-//     `
-//     }
-// }   
