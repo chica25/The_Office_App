@@ -27,25 +27,59 @@ class Character {
         `
         this.constructor.container.append(card);
     }
-        
-        // const likeButton = card.getElementById('likes-btn')
- 
 
+    updateCharacterLikesHTML = (number) => {
+        this.card.children[2].innerHTML = `${number} Likes`;
+    };
+ 
     attachClickListener = () => {
        this.card.addEventListener("click", (event) => {
             // console.log(this);
             let id = this.id
            if (event.target.className === "likes-btn"){
-                api.updateCharacterLikes(id).then((character) => {
-                    this.updateCharacterLikesHTML(character);
-                });
+                // api.updateCharacterLikes(id).then((character) 
+               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes)); 
+                    //  this.updateCharacterLikesHTML(character);
+                }
+
+           if (event.target.className === "quotes-btn")
+               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes)); 
+
                 // console.log(this.character.id)
             //  api.fetchQuotes(this.character_id).then(quotes => console.log(quotes))
                 //use the character id to make a fetch request for their quotes
-            }
-        });
+            })
+        
+            // updateCharacterLikesHTML = (like) => {
+       
+    
 
-  
         };
+
     }
- 
+
+// practice
+// // items class
+// class Item {
+//     static all = []
+
+//     constructor(name, description, price, id)
+// }
+
+// itemAdapter class
+// class ItemAdapter{
+//     constructor(){
+//         this.baseURL = "http://localhost:3000/items"
+//     }
+//         // this.name = name
+//         // this.description = descriptrion
+//         // this.price = price
+//         // this.id = id
+// fetchImages(baseURL) {
+//         fetch(this.baseUrl)
+//         .then(res => res.json())
+//         .then(json => {
+
+//         })
+//     }
+// }
