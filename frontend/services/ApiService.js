@@ -17,8 +17,9 @@ class ApiService {
     }
 
 
-    fetchQuotes = (character_id) => fetch(`${this.baseUrl}/characters/${character_id}/quotes`).then(res => res.json());
+    fetchQuotes = (character_id) => { 
+        return fetch(`${this.baseUrl}/characters/${character_id}/quotes`).then(res => res.json());
         // console.log(fetchQuotes)
-}
-  
+    }
+} 
 
