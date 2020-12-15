@@ -1,5 +1,6 @@
 class Quote {
-    static container = document.querySelector('quote-container')
+   
+    static container = document.querySelector('.quote-container')
     constructor(content, id) {
         this.content = content
         this.character_id = id
@@ -13,7 +14,7 @@ class Quote {
     }
 
     render() {
-        debugger
+        // debugger
         const quoteList = document.createElement("div")
         // refactor this.name, this.image_url, this.likes
         // const {name, image_url, likes} = this.character;
