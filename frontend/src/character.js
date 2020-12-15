@@ -9,11 +9,11 @@ class Character {
         this.attachClickListener();
         this.getQuoteListener();
     }
-   
+
     static createCharacters(data) {
         data.forEach(character => new Character(character))
     }
-    render(){
+    render() {
         const card = document.createElement("div")
         // refactor this.name, this.image_url, this.likes
         // const {name, image_url, likes} = this.character;
@@ -29,32 +29,32 @@ class Character {
         this.constructor.container.append(card);
     }
 
-    updateCharacterLikesHTML = (number) => {
-        this.card.children[2].innerHTML = `${number} Likes`;
+    updateCharacterLikesHTML = (num) => {
+        this.card.children[2].innerHTML = `${num} Likes`;
     };
- 
+
     attachClickListener = () => {
-       this.card.addEventListener("click", (event) => {
+        this.card.addEventListener("click", (event) => {
             // console.log(this);
             let id = this.id
-           if (event.target.className === "likes-btn"){
+            if (event.target.className === "likes-btn") {
                 // api.updateCharacterLikes(id).then((character) 
-               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));     
-           }
-                
-        });
-
-        }
-        getQuoteListener = () => {
-            this.card.addEventListener("click", (event) => {
-            let id = this.id   
-             if (event.target.className === "quotes-bttn") {
-                Quote.getQuotes(id)
+                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
             }
 
-            let characStyle = document.createElement('style');
-                characStyle.innerHTML = 'body{ color:blue; }';
-                document.body.style.color = 'black';
+        });
+
+    }
+    getQuoteListener = () => {
+        this.card.addEventListener("click", (event) => {
+            let character_id = this.character_id
+            if (event.target.className === "quotes-bttn") {
+                Quote.getQuotes(character_id)
+            }
+
+            // let characStyle = document.createElement('style');
+            // characStyle.innerHTML = 'body{ color:blue; }';
+            // document.body.style.color = 'black';
 
         });
 

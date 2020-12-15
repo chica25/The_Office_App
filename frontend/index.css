@@ -1,17 +1,18 @@
 
 body {
-  background-color: skyblue;
   text-align: left;
+  font-style: helevitica neue;
 }
 
 img {
-
+ width: 100%;
+height: auto;
 }
 
 logo {
- width: 100%;
-   border-radius: 8px;
-
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/51X%2BLxduJVL._AC_SY355_.jpg");
+  width: 100%;
+  height: auto;
 }
 
 card {

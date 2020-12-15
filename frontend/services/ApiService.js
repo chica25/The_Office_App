@@ -12,14 +12,12 @@ class ApiService {
         fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
         // console.log(fetchImages);
     }
-   
-    // Character - update likes
     updateCharacterLikes = (id) => {
-        return fetch(`${this.baseUrl}/characters/${id}`, { method: "PATCH" }).then(res => res.json());
+       return fetch(`${this.baseUrl}/characters/${id}`, { method: "PATCH" }).then(res => res.json());
     }
-  
 
-     fetchQuotes = (id) => fetch(`${this.baseUrl}/characters/${id}/quotes`).then(res => res.json());
+
+    fetchQuotes = (character_id) => fetch(`${this.baseUrl}/characters/${character_id}/quotes`).then(res => res.json());
         // console.log(fetchQuotes)
 }
   
