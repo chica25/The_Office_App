@@ -39,11 +39,7 @@ class Character {
             let id = this.id
            if (event.target.className === "likes-btn"){
                 // api.updateCharacterLikes(id).then((character) 
-               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes)); 
-                    //  this.updateCharacterLikesHTML(character);
-                // } else if (event.target.className === "quotes-bttn") {
-                    // Quote.getQuotes(id)
-               
+               api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));     
            }
                 
         });
@@ -61,27 +57,3 @@ class Character {
     }
 
 }
-// practice
-// // items class
-// class Item {
-//     static all = []
-
-//     constructor(name, description, price, id)
-// }
-
-// itemAdapter class
-// class ItemAdapter{
-//     constructor(){
-//         this.baseURL = "http://localhost:3000/items"
-//     }
-//         // this.name = name
-//         // this.description = descriptrion
-//         // this.price = price
-//         // this.id = id
-// fetchImages(baseURL) {
-//         fetch(this.baseUrl)
-//         .then(res => res.json())
-//         .then(json => {
-
-//         })
-//     }

@@ -23,9 +23,4 @@ class ApiService {
         // console.log(fetchQuotes)
 }
   
- 
-  
-
-// update character likes
-// udpateLikes = ()
 

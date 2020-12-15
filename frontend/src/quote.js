@@ -1,5 +1,5 @@
 class Quote {
-        static container = document.querySelector('.quote-col col')
+    static container = document.getElementsByTagName('quote-col')
         constructor(quote) {
         this.quote = quote
         this.character_id = character_id
@@ -8,7 +8,7 @@ class Quote {
 
     static getQuotes(id) {
         api.fetchQuotes(id).then((data) =>
-            data.forEach((quote) => new Quote(quotes))
+            data.forEach((quote) => new Quote(quote))
         );
     }
 
@@ -26,10 +26,4 @@ class Quote {
 
 }
 
-// practice
-// render() {
-//     console.log(this.notes)
-//     const notesArray = this.notes.map(note => `<li>${note.body}</li>`)
-//     const notesContainer = document.getElementBeId('notes-cotainer')
-//     notesContainer.innerHTML = `
-       
+
