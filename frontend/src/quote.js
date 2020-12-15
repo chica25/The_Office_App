@@ -1,8 +1,8 @@
 class Quote {
-    static container = document.getElementsByTagName('quote-col')
+    static container = document.querySelector('quote-container')
         constructor(quote) {
-        this.quote = quote
-        this.character_id = character_id
+        this.quote = quote;
+        this.character_id = character_id;
         this.render()
     }
 
@@ -27,3 +27,7 @@ class Quote {
 }
 
 
+// practice 
+class Item {
+    static all = []
+}

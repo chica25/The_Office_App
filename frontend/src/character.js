@@ -1,5 +1,5 @@
 class Character {
-    static container = document.querySelector(".character-col")
+    static container = document.querySelector(".character-container")
     constructor(character) {
         this.name = character.name;
         this.image_url = character.image_url;
@@ -51,6 +51,10 @@ class Character {
              if (event.target.className === "quotes-bttn") {
                 Quote.getQuotes(id)
             }
+
+            let characStyle = document.createElement('style');
+                characStyle.innerHTML = 'body{ color:blue; }';
+                document.body.style.color = 'black';
 
         });
 
