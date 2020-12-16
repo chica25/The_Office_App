@@ -20,10 +20,10 @@ class Character {
         card.className = "card"
         this.card = card;
         this.card.innerHTML = `
-        <h3>${this.name}</h3>
+        <h2>${this.name}</h2>
         <img src="${this.image_url}" />
         <p>${this.likes}</p>
-        <button class="likes-btn">Likes</button>
+        <button class="likes-btn">Likes</button><br>
         <button class="quotes-bttn">Quotes</button>
         `
         this.constructor.container.append(card);
@@ -45,19 +45,21 @@ class Character {
         });
 
     }
-    getQuoteListener = () => {
-        this.card.addEventListener("click", (event) => {
+        getQuoteListener = () => {
+         this.card.addEventListener("click", (event) => {
             let character_id = this.id
             if (event.target.className === "quotes-bttn") {
                 Quote.getQuotes(character_id)
             }
 
-            // let characStyle = document.createElement('style');
-            // characStyle.innerHTML = 'body{ color:blue; }';
-            // document.body.style.color = 'black';
 
         });
 
     }
 
-}
+ }
+
+
+            // let characStyle = document.createElement('style');
+            // characStyle.innerHTML = 'body{ color:blue; }';
+            // document.body.style.color = 'black';
