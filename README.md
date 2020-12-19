@@ -9,7 +9,7 @@ Fork this repository
 
 Install bundle `$bundle`
 
-Run `$ rails s` in the terminal
+Run `$ rails s` 
 
 ##Contributing
 
