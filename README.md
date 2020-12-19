@@ -1,7 +1,7 @@
 
 # Welcome to the Office Javascrip and Rails Api application! 
 
-In this app users can select the like button for each character and view the list of quotes by selecting on the character button. 
+In this app users have the option to click on their favorite character(s), by selecting the like button and quotes button. 
 
 ## To get started, please follow the instructions below:
 
