@@ -14,10 +14,11 @@ Run `$ rails s` in the terminal
 ##Contributing
 
 You're welcome to contribute to this project. 
+
 ##Acknowledgement
 
-![](https://upload.wikimedia.org/wikipedia/commons/6/61/FS_wiki.png)
-![](https://i.dlpng.com/static/png/6973121_preview.png)
+![](images/flatiron_img.png)
+![](images/the_office.png)
 
 ##Contact information
 If you have any questions, feel free to reach out at the following email:
