@@ -18,6 +18,7 @@ You're welcome to contribute to this project.
 ## Acknowledgement
 
 ![](images/flatiron_img.png)
+
 ![](images/the_office.png)
 
 ## Contact information
