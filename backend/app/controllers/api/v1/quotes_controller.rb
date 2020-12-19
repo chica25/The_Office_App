@@ -6,3 +6,4 @@ class Api::V1::QuotesController < ApplicationController
     render json: @quotes, include: [:character], except: [:created_at, :updated_at]
   end
 end
+  

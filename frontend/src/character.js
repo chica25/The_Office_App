@@ -22,9 +22,11 @@ class Character {
         this.card.innerHTML = `
         <h2>${this.name}</h2>
         <img src="${this.image_url}" />
-        <p>${this.likes}</p>
+        <p>${this.likes} Likes</p>
+        <div>
         <button class="likes-btn">Likes</button><br>
         <button class="quotes-bttn">Quotes</button>
+        </div>
         `
         this.constructor.container.append(card);
     }
@@ -49,7 +51,7 @@ class Character {
          this.card.addEventListener("click", (event) => {
             let character_id = this.id
             if (event.target.className === "quotes-bttn") {
-                Quote.getQuotes(character_id)
+                Quote.getQuotes(character_id, this.card)
             }
 
 
