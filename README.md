@@ -18,7 +18,7 @@ You're welcome to contribute to this project.
 ##Acknowledgement
 
 ![](images/flatiron_img.png)
-![](images/the_office.png)
+![](images/.png)
 
 ##Contact information
 If you have any questions, feel free to reach out at the following email:
