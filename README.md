@@ -1,5 +1,5 @@
 
-# Welcome to the Office Javascrip and Rails Api application! 
+# Welcome to The Office Javascrip and Rails Api application! 
 
 In this app users have the option to click on their favorite character(s), by selecting the like button and quotes button. 
 
