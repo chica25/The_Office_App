@@ -38,7 +38,7 @@ class Character {
     attachClickListener = () => {
         this.card.addEventListener("click", (event) => {
             // console.log(this);
-            let id = this.id
+            const id = this.id
             if (event.target.className === "likes-btn") {
                 // api.updateCharacterLikes(id).then((character) 
                 api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
@@ -49,7 +49,7 @@ class Character {
     }
         getQuoteListener = () => {
          this.card.addEventListener("click", (event) => {
-            let characterId = this.id
+            const characterId = this.id
             if (event.target.className === "quotes-bttn") {
                 Quote.getQuotes(characterId, this.card)
             }
