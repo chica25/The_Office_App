@@ -49,9 +49,9 @@ class Character {
     }
         getQuoteListener = () => {
          this.card.addEventListener("click", (event) => {
-            let character_id = this.id
+            let characterId = this.id
             if (event.target.className === "quotes-bttn") {
-                Quote.getQuotes(character_id, this.card)
+                Quote.getQuotes(characterId, this.card)
             }
 
 

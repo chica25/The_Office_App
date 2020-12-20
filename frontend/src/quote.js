@@ -5,15 +5,15 @@ class Quote {
     // static charImage = document.getElementsByClassName("card");
     constructor(content, id, characterCard) {
         this.content = content
-        this.character_id = id
+        this.characterId = id
         this.characterCard = characterCard
         this.render()
     }
 
-    static getQuotes(character_id, characterCard) {
+    static getQuotes(characterId, characterCard) {
      
-        api.fetchQuotes(character_id).then((data) =>
-            data.forEach((quote) => new Quote(quote.quote, quote.character_id, characterCard))
+        api.fetchQuotes(characterId).then((data) =>
+            data.forEach((quote) => new Quote(quote.quote, quote.characterId, characterCard))
         );
     }
 
