@@ -22,10 +22,5 @@ class ApiService {
         // console.log(fetchQuotes)
     }
 
-    searchCharacterByName = (character) => {
-        const url = new URL(this.baseUrl + "/characters") 
-        url.search = new URLSearchParams(character)
-        fetch(url).then(res => res.json()).then((data) => console.log(data));
-    }
-} 
 
+    } 

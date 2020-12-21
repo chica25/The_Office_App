@@ -6,7 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
     api.fetchQuotes();
 
-    new SearchForm();
-
 }) 
 

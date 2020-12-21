@@ -3,13 +3,9 @@ class Api::V1::CharactersController < ApplicationController
   # GET /characters
   def index
     @characters = Api::V1::Character.all
-    if params[:search]
-      @character = character.search_name(params[:search])
-     render json: @character
-    else
      render json: @characters, except: [:created_at, :updated_at]
   end
-end
+
 
   # PATCH - /characters/:id/quotes
   def update
