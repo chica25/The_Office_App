@@ -1,23 +1,24 @@
 
 class Quote {
-
-    constructor(content, id, characterCard) {
+    constructor(content, id) {
         this.content = content
         this.characterId = id
-        this.characterCard = characterCard
         this.render()
     }
 
-    static getQuotes(characterId, characterCard) {
-     
+    static getQuotes(characterId) {
+        const div = document.querySelector(`#character-${characterId}`)
+        div.innerHTML = ''
         api.fetchQuotes(characterId).then((data) =>
-            data.forEach((quote) => new Quote(quote.quote, quote.characterId, characterCard))
+            data.forEach((quote) => new Quote(quote.quote, characterId))
                 
         );
     }
 
     render() {
-        this.characterCard.innerHTML += `<h3>${this.content}</h3>`
+        // debugger
+        const div = document.querySelector(`#character-${this.characterId}`)
+        div.innerHTML += `<h3>${this.content}</h3>`
     }
 }
 

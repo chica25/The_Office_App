@@ -25,6 +25,7 @@ class Character {
         <button class="likes-btn">Likes</button><br>
         <button class="quotes-bttn">Quotes</button>
         </div>
+        <div class="quotes-container" id="character-${this.id}"></div>
         `
         this.constructor.container.append(card);
     }
@@ -45,11 +46,9 @@ class Character {
     }
     getQuoteListener = () => {
         this.card.addEventListener("click", (event) => {
-            const characterId = this.id
             if (event.target.className === "quotes-bttn") {
-                Quote.getQuotes(characterId, this.card)
+                Quote.getQuotes(this.id)
             }
-
 
         });
 
