@@ -47,8 +47,8 @@ class Character {
         });
 
     }
-        getQuoteListener = () => {
-         this.card.addEventListener("click", (event) => {
+    getQuoteListener = () => {
+        this.card.addEventListener("click", (event) => {
             const characterId = this.id
             if (event.target.className === "quotes-bttn") {
                 Quote.getQuotes(characterId, this.card)
@@ -58,10 +58,9 @@ class Character {
         });
 
     }
-
- }
-
-
-            // let characStyle = document.createElement('style');
-            // characStyle.innerHTML = 'body{ color:blue; }';
-            // document.body.style.color = 'black';
+}
+// Create a search form
+// search function by character name
+// create a new function
+// use the filter function to iterate the character names
+// character.name
