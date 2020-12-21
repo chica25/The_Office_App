@@ -16,7 +16,6 @@ class Quote {
     }
 
     render() {
-        // debugger
         const div = document.querySelector(`#character-${this.characterId}`)
         div.innerHTML += `<h3>${this.content}</h3>`
     }
