@@ -15,8 +15,6 @@ class Character {
     }
     render() {
         const card = document.createElement("div")
-        // refactor this.name, this.image_url, this.likes
-        // const {name, image_url, likes} = this.character;
         card.className = "card"
         this.card = card;
         this.card.innerHTML = `
@@ -37,10 +35,8 @@ class Character {
 
     attachClickListener = () => {
         this.card.addEventListener("click", (event) => {
-            // console.log(this);
             const id = this.id
             if (event.target.className === "likes-btn") {
-                // api.updateCharacterLikes(id).then((character) 
                 api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
             }
 
@@ -59,8 +55,3 @@ class Character {
 
     }
 }
-// Create a search form
-// search function by character name
-// create a new function
-// use the filter function to iterate the character names
-// character.name
