@@ -1,10 +1,10 @@
 class SearchForm {
     constructor(){
+    this.formEventListener();
     this.renderSearchForm();
  }    
  renderSearchForm = () => {
     const form = document.getElementById("search-form")
-    console.log(form)
     form.innerHTML = `
         <form action="" id="search-form" method="get">
             <label for="search"></label><br>
@@ -13,13 +13,16 @@ class SearchForm {
         </form>
         `
         }
-        formEventListener = (request) => {
+        formEventListener = () => {
             const form = document.getElementById("search-form")
-            formEventListener("submit", (e) => this.searchEvent(e));
+            form.addEventListener("submit", (e) => this.searchEvent(e));
         }
         searchEvent = (e) => {
             e.preventDefault();
-            const formName = {name: event.target.search.value}
+            const formName = {search: e.target.search.value}
+            console.log(formName)
+            api.searchCharacterByName(formName)
+          
         }
     }
   
