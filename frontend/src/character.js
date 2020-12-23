@@ -5,11 +5,9 @@ class Character {
         this.image_url = character.image_url;
         this.likes = character.likes;
         this.id = character.id;
-        this.alpha = character.alpha
         this.render();
         this.attachClickListener();
         this.getQuoteListener();
-        this.sortEventListener();
     }
 
     static createCharacters(data) {
@@ -32,9 +30,17 @@ class Character {
             this.constructor.container.append(card);
         }
 
+
+    static getQuotes(characterId) {
+        const div = document.querySelector(`#character-${characterId}`)
+        div.innerHTML = ''
+        api.fetchQuotes(characterId).then((data) =>
+            data.forEach((quote) => new Quote(quote.quote, characterId))
+        )}
+    
         updateCharacterLikesHTML = (num) => {
             this.card.children[2].innerHTML = `${num} Likes`;
-        };
+        }
 
         attachClickListener = () => {
             this.card.addEventListener("click", (event) => {
@@ -55,30 +61,17 @@ class Character {
         })
     }
 
-    
-        sortEventListener = () => {
-            const sortButton = document.querySelector("sort-button");
-            sortButton.forEach(charac => {
-                charac.addEventListener('click', e => {
-                    if (e.target === "sort-button") {
-                        
-                    }
-                })
-            })
-            // buttonByName.addEventListener("click", (e) => {
-            //     if (e.target === "sort-button") {
-            //         api.fetchImages(console.log(alp).then
-        
-           
-        }
+    // static fetchSortandRenderCharacters(){
+        //fetch an array of all characters
+        //sort the array
+        //clear the existing character container
+        // iterate over the sorted array, instantiating new Character objects
+//     }
 
-            // ImagesByAlpha = (data) => { 
-            //     fetchImages.forEach(dat => dat)}
+}
 
-    }
    
-    
-        
+  
          
 
         
