@@ -9,6 +9,7 @@ class Character {
             this.render();
             this.attachClickListener();
             this.getQuoteListener();
+            this.sortEventListener()
             this.constructor.sortArray.push(character);
         }
 
@@ -62,11 +63,16 @@ class Character {
                 }
         })
     }
+
+    sortEventListener = () => {
+        const sortButton = document.querySelector(".sort-button");
+        sortButton.addEventListener("click", () => (Character.fetchSortandRenderCharacters()))
+
+    }
     
     static fetchSortandRenderCharacters(){
-
+        this.container.innerHTML = "";
         const sortedArray = this.sortArray.sort((a,b) => {
-            // debugger
             if (a.name < b.name) {
                 return -1;
             }
@@ -74,7 +80,7 @@ class Character {
                 return 1;
             }
         }) 
-        
+        this.sortArray = []
         sortedArray.forEach( character => (new Character(character)))
         // return sortedArray
         // console.log(this.sortArray)
