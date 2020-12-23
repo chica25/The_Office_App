@@ -89,17 +89,7 @@ class Character {
     
 }
    
-    // fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
-
-
-
-    // static fetchSortandRenderCharacters(){
-        //fetch an array of all characters
-        //sort the array
-        //clear the existing character container
-        // iterate over the sorted array, instantiating new Character objects
-//     }
-
+  
 
    
   

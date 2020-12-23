@@ -1,4 +1,3 @@
-// fetch code goes here
 
 class ApiService {
     constructor(baseUrl){
