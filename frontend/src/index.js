@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sortEventListener = () => {
         const sortButton = document.querySelector(".sort-button");
+        const sortArray = []
         sortButton.addEventListener("click", () => {
-            console.log(sortButton)
-            // Character.fetchSortandRenderCharacters()
+            // console.log(sortButton)
+            //Character.fetchSortandRenderCharacters()
+            api.fetchSort.then((data) => console.log(data))
         })
     }
 

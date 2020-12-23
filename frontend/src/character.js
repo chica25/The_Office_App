@@ -1,14 +1,16 @@
 class Character {
     static container = document.querySelector(".character-container")
-    constructor(character) {
-        this.name = character.name;
-        this.image_url = character.image_url;
-        this.likes = character.likes;
-        this.id = character.id;
-        this.render();
-        this.attachClickListener();
-        this.getQuoteListener();
-    }
+    static staticArray = []
+        constructor(character) {
+            this.name = character.name;
+            this.image_url = character.image_url;
+            this.likes = character.likes;
+            this.id = character.id;
+            this.render();
+            this.attachClickListener();
+            this.getQuoteListener();
+            this.constructor.staticArray.push(character);
+        }
 
     static createCharacters(data) {
         data.forEach(character => new Character(character))
@@ -60,6 +62,21 @@ class Character {
                 }
         })
     }
+    
+    static fetchSortandRenderCharacters(){
+        this.constructor.sortArray.sort((a, b) => a - b);
+        
+    }
+
+}
+
+
+
+    
+   
+    // fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
+
+
 
     // static fetchSortandRenderCharacters(){
         //fetch an array of all characters
@@ -68,7 +85,6 @@ class Character {
         // iterate over the sorted array, instantiating new Character objects
 //     }
 
-}
 
    
   
