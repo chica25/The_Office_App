@@ -18,9 +18,5 @@ class ApiService {
         return fetch(`${this.baseUrl}/characters/${characterId}/quotes`).then(res => res.json());
     }
 
-    fetchSort = () => {
-        const url = new URL(this.baseUrl + "/characters")
-        fetch(url).then(res => res.json())
-    }
 
-    } 
+
