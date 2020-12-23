@@ -62,11 +62,10 @@ class Character {
                 }
         })
     }
-    fetchSortandRenderCharacters
     
     static fetchSortandRenderCharacters(){
-        // debugger
-        this.sortArray.sort((a,b) => {
+
+        const sortedArray = this.sortArray.sort((a,b) => {
             // debugger
             if (a.name < b.name) {
                 return -1;
@@ -75,12 +74,14 @@ class Character {
                 return 1;
             }
         }) 
+        
+        sortedArray.forEach( character => (new Character(character)))
+        // return sortedArray
+        // console.log(this.sortArray)
 
     }
-
-
-}
     
+}
    
     // fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
 
