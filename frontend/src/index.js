@@ -7,9 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     api.fetchImages();
 
+    this.sortEventListener();
+
 })
 
-
-
+sortEventListener = () => {
+    const sortButton = document.querySelector(".sort-button");
+    sortButton.addEventListener("click", () => (Character.fetchSortandRenderCharacters()))
+}
 
 

@@ -6,11 +6,15 @@ class Character {
             this.image_url = character.image_url;
             this.likes = character.likes;
             this.id = character.id;
+            this.character = character;
+            // debugger
             this.render();
             this.attachClickListener();
             this.getQuoteListener();
-            this.sortEventListener()
+            // this.sortEventListener()
+            //Push Character objects into array
             this.constructor.sortArray.push(character);
+            //Sort array of characters
         }
 
     static createCharacters(data) {
@@ -20,17 +24,21 @@ class Character {
             const card = document.createElement("div")
             card.className = "card"
             this.card = card;
+            this.renderInnerHTML(this.character);
+            this.constructor.container.append(card);
+        }
+
+        renderInnerHTML = (character) => {
             this.card.innerHTML = `
-            <h2>${this.name}</h2>
-            <img src="${this.image_url}" />
-            <p>${this.likes} Likes</p>
+            <h2>${character.name}</h2>
+            <img src="${character.image_url}" />
+            <p>${character.likes} Likes</p>
             <div>
             <button class="likes-btn">Likes</button><br>
             <button class="quotes-bttn">Quotes</button>
             </div>
-            <div class="quotes-container" id="character-${this.id}"></div>
+            <div class="quotes-container" id="character-${character.id}"></div>
             `
-            this.constructor.container.append(card);
         }
 
 
@@ -64,11 +72,7 @@ class Character {
         })
     }
 
-    sortEventListener = () => {
-        const sortButton = document.querySelector(".sort-button");
-        sortButton.addEventListener("click", () => (Character.fetchSortandRenderCharacters()))
-
-    }
+  
     
     static fetchSortandRenderCharacters(){
         this.container.innerHTML = "";
@@ -80,8 +84,9 @@ class Character {
                 return 1;
             }
         }) 
+    
         this.sortArray = []
-        sortedArray.forEach( character => (new Character(character)))
+        sortedArray.forEach( character => {new Character(character)})
         // return sortedArray
         // console.log(this.sortArray)
 
