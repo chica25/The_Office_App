@@ -1,6 +1,6 @@
 class Character {
     static container = document.querySelector(".character-container")
-    static staticArray = []
+    static sortArray = []
         constructor(character) {
             this.name = character.name;
             this.image_url = character.image_url;
@@ -9,7 +9,7 @@ class Character {
             this.render();
             this.attachClickListener();
             this.getQuoteListener();
-            this.constructor.staticArray.push(character);
+            this.constructor.sortArray.push(character);
         }
 
     static createCharacters(data) {
@@ -62,16 +62,24 @@ class Character {
                 }
         })
     }
+    fetchSortandRenderCharacters
     
     static fetchSortandRenderCharacters(){
-        this.constructor.sortArray.sort((a, b) => a - b);
-        
+        // debugger
+        this.sortArray.sort((a,b) => {
+            // debugger
+            if (a.name < b.name) {
+                return -1;
+            }
+            else if (a.name > b.name) {
+                return 1;
+            }
+        }) 
+
     }
 
+
 }
-
-
-
     
    
     // fetch(url).then(res => res.json()).then(data => Character.createCharacters(data))
