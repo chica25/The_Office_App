@@ -8,13 +8,11 @@ class Character {
             this.id = character.id;
             this.character = character;
             // debugger
+            this.constructor.sortArray.push(character);
             this.render();
             this.attachClickListener();
             this.getQuoteListener();
-            // this.sortEventListener()
-            //Push Character objects into array
-            this.constructor.sortArray.push(character);
-            //Sort array of characters
+
         }
 
     static createCharacters(data) {
@@ -87,8 +85,6 @@ class Character {
     
         this.sortArray = []
         sortedArray.forEach( character => {new Character(character)})
-        // return sortedArray
-        // console.log(this.sortArray)
 
     }
     
