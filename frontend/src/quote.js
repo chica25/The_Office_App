@@ -11,7 +11,6 @@ class Quote {
         div.innerHTML = ''
         api.fetchQuotes(characterId).then((data) =>
             data.forEach((quote) => new Quote(quote.quote, characterId))
-                
         );
     }
 
@@ -20,5 +19,3 @@ class Quote {
         div.innerHTML += `<h3>${this.content}</h3>`
     }
 }
-
-
