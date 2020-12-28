@@ -1,9 +1,9 @@
 class Character {
     static container = document.querySelector(".character-container")
-    static sortArray = []
+    static sortAll = []
     constructor(character) {
         this.character = character;
-        this.constructor.sortArray.push(character);
+        this.constructor.sortAll.push(character);
         this.render();
         this.attachClickListener();
         this.getQuoteListener();    
@@ -58,7 +58,7 @@ class Character {
 
     static sortCharacters(){
         this.container.innerHTML = "";
-        const sortedArray = this.sortArray.sort((a,b) => {
+        const sortedResult = this.sortAll.sort((a,b) => {
             if (a.name < b.name) {
                 return -1;
             }
@@ -67,8 +67,8 @@ class Character {
             }
         }) 
     
-        this.sortArray = []
-        sortedArray.forEach( character => {new Character(character)})
+        this.sortAll = []
+        sortedResult.forEach( character => {new Character(character)})
     }
         
 
