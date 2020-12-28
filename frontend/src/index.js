@@ -8,5 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 sortEventListener = () => {
     const sortButton = document.querySelector(".sort-button");
-    sortButton.addEventListener("click", () => (Character.fetchSortandRenderCharacters()))
+    sortButton.addEventListener("click", () => (Character.sortCharacters()))
 }
+        
+
+
+
+ 

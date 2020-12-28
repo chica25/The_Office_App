@@ -1,24 +1,19 @@
 class Character {
     static container = document.querySelector(".character-container")
     static sortArray = []
-
     constructor(character) {
-        // this.name = character.name;
-        // this.image_url = character.image_url;
-        // this.likes = character.likes;
-        // this.id = character.id;
         this.character = character;
         this.constructor.sortArray.push(character);
         this.render();
         this.attachClickListener();
-        this.getQuoteListener();
+        this.getQuoteListener();    
     }
 
     static createCharacters(data) {
         data.forEach(character => new Character(character))
     }
 
-    render() {
+     render() {
         const card = document.createElement("div")
         card.className = "card"
         this.card = card;
@@ -48,11 +43,11 @@ class Character {
             const id = this.character.id
             
             if (event.target.className === "likes-btn") {
-                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character.likes));
+                api.updateCharacterLikes(id).then((character) => this.updateCharacterLikesHTML(character["likes"]));
             }
         });
     }
-    
+
     getQuoteListener = () => {
         this.card.addEventListener("click", (event) => {
             if (event.target.className === "quotes-bttn") {
@@ -61,7 +56,7 @@ class Character {
         })
     }
 
-    static fetchSortandRenderCharacters(){
+    static sortCharacters(){
         this.container.innerHTML = "";
         const sortedArray = this.sortArray.sort((a,b) => {
             if (a.name < b.name) {
@@ -75,12 +70,11 @@ class Character {
         this.sortArray = []
         sortedArray.forEach( character => {new Character(character)})
     }
-}
-   
-  
-
-   
-  
-         
-
         
+
+}
+
+   
+        
+
+
