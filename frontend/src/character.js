@@ -1,9 +1,11 @@
 class Character {
     static container = document.querySelector(".character-container")
     static sortAll = []
+    static filterArray = []
     constructor(character) {
         this.character = character;
         this.constructor.sortAll.push(character);
+        this.constructor.filterArray.push(character);
         this.render();
         this.attachClickListener();
         this.getQuoteListener();    
@@ -38,6 +40,7 @@ class Character {
         this.card.children[2].innerHTML = `${num} Likes`;
     }
 
+  
     attachClickListener = () => {
         this.card.addEventListener("click", (event) => {
             const id = this.character.id
@@ -55,7 +58,7 @@ class Character {
             }
         })
     }
-
+    
     static sortCharacters(){
         this.container.innerHTML = "";
         const sortedResult = this.sortAll.sort((a,b) => {
@@ -69,10 +72,39 @@ class Character {
     
         this.sortAll = []
         sortedResult.forEach( character => {new Character(character)})
+     }
+    static allCharacters() {
+        const text = document.querySelector('.text').style.color = 'purple';
+        // text.style.color = 'purple';
+        text.innerHTML = 'Pam Beesley';
+        // debugger
     }
-        
+    static characterByLetter() {
+        this.container.innerHTML = "";
+        const fil = this.filterArray.filter(n => n["name"].startsWith("A"))
+        // debugger
+        this.filterArray = []
+        fil.forEach(cha => {new Character(cha)})
+    }
 
+ 
 }
+
+
+
+
+ 
+      
+    
+
+   
+
+
+    
+   
+
+
+
 
    
         
