@@ -21,10 +21,6 @@ You're welcome to contribute to this project.
 
 ![](images/the_office.png)
 
-## Contact information
-If you have any questions, feel free to reach out at the following email:
-pfco520@gmail.com
-
 ## License
 
 The app is available as open source under the terms of the MIT License.
