@@ -1,7 +1,7 @@
 
 # Welcome to The Office Javascript and Rails API App! 
 
-In this app users have the option to click on their favorite character(s), by selecting the like button and quotes button. 
+Users have the option to click on their favorite character(s) by selecting the like button and quotes button. 
 
 ## To get started, please follow the instructions below:
 
